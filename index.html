@@ -135,6 +135,145 @@
               </div>
             </div>
         </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q6" role="button" aria-expanded="false" aria-controls="Q6">
+                Q6. What are value types and reference types in c#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q6">
+                <div class="card card-body">
+                    <p><strong>Value Types vs Reference Types</strong></p>
+                    <ul>
+                        <li>Value Types
+                            <ul>
+                                <li>Variables that directly contain values. Example :- <code>int i = 100;</code></li>
+                                <li>Value types : <strong>bool,char,decimal,double,enum,float,int,long,sbyte,short,struct,uint,ulong,ushort</strong></li>
+                            </ul>
+                        </li>
+                        <li>Reference Types
+                            <ul>
+                                <li>Unlike value types, a reference type doesn't store its value directly. Instead, it stores the address where the value is being stored. In other words, a reference type contains a pointer to another memory location that holds the data. Example :- <code>string s = "Hello World!!";</code></li>
+                                <li>Reference Types : <strong>String,Arrays (even if their elements are value types),Class,Delegate</strong></li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q7" role="button" aria-expanded="false" aria-controls="Q7">
+                Q7. What is a Null Coalescing Operator? Explain with example.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q7">
+                <div class="card card-body">
+                    <p><strong>Null Coalescing Operator</strong></p>
+                    <ul>
+                        <li>By default Value types are non nullable.To make it nullable use '?'. Eg:- int? j=null</li>
+                        <li>In C#, ?? operator is known as Null-coalescing operator. It will return the value of its left-hand operand if it is not null. If it is null, then it will evaluate the right-hand operand and returns its result. Or if the left-hand operand evaluates to non-null, then it does not evaluate its right-hand operand.</li>
+                        <li><code>int ? item_1 = null;</code>
+                        <br>
+                        <code>int ? item_2 = item_1 ?? 100;</code>
+                        <br>
+                        <code><strike>int? item_2 = item_1.Value;</strike></code>
+                        <br>
+                        <code>Console.WriteLine("Value of item_2 is: {0}", item_2);</code> //Value of item_2 is: 100
+                        <br>
+                        Here, the commented line will give you an
+                        InvalidOperationException. So to 
+                        overcome this problem we use ?? operator 
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q8" role="button" aria-expanded="false" aria-controls="Q8">
+                Q8. What is Explicit Conversion?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q8">
+                <div class="card card-body">
+                    <p><strong>Explicit Conversion</strong></p>
+                    <ul>
+                        <li>C# Types order is like <code>char < int < long < float < double</code></li>
+                        <li>In implicit type conversion, the C# compiler automatically converts one type to another.</li>
+                        <li>In explicit type conversion, we explicitly convert one type to another which may result in loss of data.
+                            <br>
+                            Eg:- 
+                            <code>double myDouble = 9.78;<br>
+                                int myInt = (int) myDouble;  <br>
+                                Console.WriteLine(myInt); 
+                            </code> //Output 9
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q9" role="button" aria-expanded="false" aria-controls="Q9">
+                Q9. Difference between Parse and TryParse
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q9">
+                <div class="card card-body">
+                    <p><strong>Parse vs TryParse</strong></p>
+                    <ul>
+                        <li>We can convert a string to a number by calling the Parse or TryParse method found on numeric types (int, long, double, and so on)</li>
+                        <li><strong>Parse</strong> will directly try to parse a string into int and if the string doesnt contain a valid int value then it will throw an error</li>
+                        <li><strong>TryParse</strong> will check the string if it is a valid int , then only it will be stored to a variable. Eg:- <code>int.TryParse(strNumber,out Result)</code></li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q10" role="button" aria-expanded="false" aria-controls="Q10">
+                Q10. WAP to calculate the min and max value of int,float and double.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q10">
+                <div class="card card-body">
+                    <p><strong>Min and Max Value of Integer Types</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                Console.WriteLine("Min Value is : {0}", int.MinValue);<br>
+                                Console.WriteLine("Max Value is : {0}", int.MaxValue);<br><br>
+                                Console.WriteLine("Min Value is : {0}", float.MinValue);<br>
+                                Console.WriteLine("Max Value is : {0}", float.MaxValue);<br><br>
+                                Console.WriteLine("Min Value is : {0}", double.MinValue);<br>
+                                Console.WriteLine("Max Value is : {0}", double.MaxValue);<br>
+                            </code>
+                        </li>
+                        <li>Output :- <br>
+                            Min Value is : -2147483648 <br>
+                            Max Value is : 2147483647 <br>
+                            Min Value is : -3.402823E+38 <br>
+                            Max Value is : 3.402823E+38 <br>
+                            Min Value is : -1.79769313486232E+308 <br>
+                            Max Value is : 1.79769313486232E+308
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
