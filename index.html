@@ -274,6 +274,313 @@
               </div>
             </div>
         </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q11" role="button" aria-expanded="false" aria-controls="Q11">
+                Q11. What are arrays in c#. Can we store different data types data for an array in c#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q11">
+                <div class="card card-body">
+                    <p><strong>Arrays</strong></p>
+                    <ul>
+                        <li>An Array is a collection of similar data types.</li>
+                        <li>Arrays are strongly typed.</li>
+                        <li><strong>Disadvantage</strong> - Can not grow in size once initialized , have to rely on Integral indices to store and retrieve items from array.</li>
+                        <li>Array Declaration.
+                            <ul>
+                                <li><code>int[] arr = new int[5] {1,2,3,4,5};</code></li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q12" role="button" aria-expanded="false" aria-controls="Q12">
+                Q12. Create an integer array to store 5 numbers and display those numbers in console window.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q12">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                int[] arr = new int[5];<br>
+                                arr[0] = 10;<br>
+                                arr[1] = 20;<br>
+                                arr[2] = 30;<br>
+                                arr[3] = 40;<br>
+                                arr[4] = 50;<br>
+                                foreach (int i in arr){<br>
+                                    Console.WriteLine(i);<br>
+                                }
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q13" role="button" aria-expanded="false" aria-controls="Q13">
+                Q13. What is the difference between | vs || and & vs && Operator.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q13">
+                <div class="card card-body">
+                    <p><strong>| vs || and & vs &&</strong></p>
+                    <ul>
+                        <li>Difference b/n | and ||
+                            <ul>
+                                <li>if(UserNumber==10 || UserNumber==20)</li>
+                                <li>In single or | if the first condition is true then there is no need to check the other but still it checks.</li>
+                                <li>In double or || if the first condition is false then only it will check the other </li>
+                            </ul>
+                        </li>
+                        <li>Difference b/n & and &&
+                            <ul>
+                                <li>if(UserNumber==10 && UserNumber==20)</li>
+                                <li>In single and & if the first condition is false still it checks the second.</li>
+                                <li>In double and && if the first condition is false it will not check the other.</li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q14" role="button" aria-expanded="false" aria-controls="Q14">
+                Q14. What is a ternary operator ? Take a number input from user , if the number is greater than 10 print "Number is greater than 10" else "Number is less than or equal to 10" using ternary operator.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q14">
+                <div class="card card-body">
+                    <p><strong>Ternary Operator</strong></p>
+                    <ul>
+                        <li>The ternary operator starts with a boolean condition. If this condition evaluates to true then it will execute the first statement after ?, otherwise the second statement after : will be executed.</li>
+                        <li>
+                            <code>
+                                Console.WriteLine("Please Enter a Number?"); <br>
+                                int a =int.Parse(Console.ReadLine()); <br>
+                                bool IsGreaterThan10; <br>
+                                IsGreaterThan10 = a > 10 ? true : false; <br>
+                                if (IsGreaterThan10){ <br>
+                                    Console.WriteLine("Number is Greater Than 10"); <br>
+                                } <br>
+                                else {<br>
+                                    Console.WriteLine("Number is Less Than or Equals To 10"); <br>
+                                }
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q15" role="button" aria-expanded="false" aria-controls="Q15">
+                Q15. WAP to take a number input from user, use switch statement to print number is greater than, less than or equal to 10.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q15">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                Console.WriteLine("Please Enter a positive Number?");
+                                int a =int.Parse(Console.ReadLine()); <br>
+                                switch (a) <br>
+                                { <br>
+                                    case 1 : case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: <br>
+                                        Console.WriteLine("Number is less than 10"); <br>
+                                        break; <br>
+                                    case 10: <br>
+                                        Console.WriteLine("Number is equal to 10"); <br>
+                                        break; <br>
+                                    default: <br>
+                                        Console.WriteLine("Number is greater than 10"); <br>
+                                        break; <br>
+                                } <br>
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q16" role="button" aria-expanded="false" aria-controls="Q16">
+                Q16. What are the different types of loops in c#.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q16">
+                <div class="card card-body">
+                    <p><strong>Loops</strong></p>
+                    <ul>
+                        <li>Print first 10 natural number using different loops.</li>
+                        <li>For Loop<br>
+                            <code>                                
+                                for(int i = 1; i <= 10; i++) <br>
+                                {<br>
+                                    Console.WriteLine(i);<br>
+                                }
+                            </code>
+                        </li>
+                        <li>While Loop <br>
+                            <code>
+                                int a = 1; <br>
+                                while (a <= 10) <br>
+                                { <br>
+                                    Console.WriteLine(a); <br>
+                                    a++; <br>
+                                }
+                            </code>
+                        </li>
+                        <li>Do While Loop <br>
+                            <code>
+                                int a = 1; <br>
+                                do <br>
+                                { <br>
+                                    Console.WriteLine(a); <br>
+                                    a++; <br>                         
+                                } while (a <= 10);
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q17" role="button" aria-expanded="false" aria-controls="Q17">
+                Q17. Difference between while and do while loop in C#.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q17">
+                <div class="card card-body">
+                    <p><strong>while vs do while loop</strong></p>
+                    <ul>
+                        <li>While loop checks the condition at the beginning , whereas do while loop checks the condition at the end of the loop.
+                        <li>Do While loop is guranteed to execute atleast once wheresas while loop do not.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q18" role="button" aria-expanded="false" aria-controls="Q18">
+                Q18. Difference between while and for loop in C#.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q18">
+                <div class="card card-body">
+                    <p><strong>while vs for loop</strong></p>
+                    <ul>
+                        <li>In while loop we do initialization at one place, condition check at another and modification at another place
+                            whereas for loop has all these at one place.</li>    
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q19" role="button" aria-expanded="false" aria-controls="Q19">
+                Q19. Explain foreach loop in C#.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q19">
+                <div class="card card-body">
+                    <p><strong>foreach loop</strong></p>
+                    <ul>
+                        <li>
+                            The foreach loop in C# iterates items in a collection, like an array or a list. It proves useful for traversing through each element in the collection and displaying them. The foreach loop is an easier and more readable alternative to for loop.
+                        </li>
+                        <li>Program <br>
+                            <code>
+                                string[] arrStr = new string[5] { "One", "Two", "Three", "Four", "Five" }; <br>
+                                foreach(string str in arrStr)<br>
+                                {<br>
+                                    Console.WriteLine(str);<br>
+                                }
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q20" role="button" aria-expanded="false" aria-controls="Q20">
+                Q20. WAP by following these instructions:
+            </a>
+            <ul class="my-2">
+                <li>Ask the user "Which type of coffee you want?" , "1 - Small , 2 - Medium , 3 - Large "</li>
+                <li>If the user enters a number other than 1 - 3 , give a message "Your choice is invalid."</li>
+                <li>At last give user a message "Thank you for shopping with us." , "Your bill amount is {TotalCoffeeCost}".</li>
+            </ul>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q20">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                int TotalCoffeeCost = 0; <br>
+                                Console.WriteLine("Which type of coffee do you want?"); <br>
+                                Console.WriteLine("1-Small , 2-Medium , 3-Large"); <br>
+                                int UserChoice=int.Parse(Console.ReadLine()); <br>
+                                switch (UserChoice) <br>
+                                { <br>
+                                    case 1: <br>
+                                        TotalCoffeeCost += 1; <br>
+                                        break; <br>
+                                    case 2: <br>
+                                        TotalCoffeeCost += 2; <br>
+                                        break; <br>
+                                    case 3: <br>
+                                        TotalCoffeeCost += 3; <br>
+                                        break; <br>
+                                    default: <br>
+                                        Console.WriteLine("Your choice {0} is invalid.",UserChoice); <br>
+                                        break; <br>           
+                                } <br>
+                                Console.WriteLine("Thank you for shopping with us."); <br>
+                                Console.WriteLine("Your bill amount is : {0}", TotalCoffeeCost);
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
