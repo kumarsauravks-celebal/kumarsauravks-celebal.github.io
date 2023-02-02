@@ -539,7 +539,7 @@
             <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q20" role="button" aria-expanded="false" aria-controls="Q20">
                 Q20. WAP by following these instructions:
             </a>
-            <ul class="my-2">
+            <ul class="my-2 list-ul">
                 <li>Ask the user "Which type of coffee you want?" , "1 - Small , 2 - Medium , 3 - Large "</li>
                 <li>If the user enters a number other than 1 - 3 , give a message "Your choice is invalid."</li>
                 <li>At last give user a message "Thank you for shopping with us." , "Your bill amount is {TotalCoffeeCost}".</li>
@@ -689,6 +689,299 @@
                         <li>Same name as that of class with ~ symbol infront of them.</li>
                         <li>Don't take any parameter and do not return a value.</li>
                         <li>These are placed where you could put code to release any resources your class was holding during its lifetime.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q26" role="button" aria-expanded="false" aria-controls="Q26">
+                Q26. What is a static constructor in C#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q26">
+                <div class="card card-body">
+                    <p><strong>Static Constructor</strong></p>
+                    <ul>
+                        <li>It id used to initialize static fields in a class. </li>
+                        <li>Use static keyword to make a constructor static.</li>
+                        <li>It is called only once , no matter how many instance we create.</li>
+                        <li>It is called before instance constructors.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q27" role="button" aria-expanded="false" aria-controls="Q27">
+                Q27. What is Inheritance? Explain with an Example?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q27">
+                <div class="card card-body">
+                    <p><strong>Inheritance</strong></p>
+                    <ul>
+                        <li>If we want to use some features from a Parent class to a Child class , we use Inheritance.</li>
+                        <li>It allows code reuse which can reduce time and errors.</li>
+                        <li>We can specify all the common fields, properties, methods in the base class which allows reusability .</li>
+                        <li>In derived class we will have only fields, properties, methods, that are specific to them.</li>
+                        <li>Program <br>
+                            <code>
+                                namespace Programs{ <br>
+                                    class ParentClass{ <br>
+                                        public void ParentClassMethod(){ <br>
+                                            Console.WriteLine("Parent Class Method Called."); <br>
+                                        } <br>
+                                    } <br>
+                                    class ChildClass : ParentClass{ <br>
+                                        public void ChildClassMethod(){ <br>
+                                            Console.WriteLine("Child Class Method Called."); <br>
+                                        } <br>
+                                    } <br>
+                                    class Program{ <br>
+                                        static void Main(){ <br>
+                                            ChildClass C1 = new ChildClass(); <br>
+                                            C1.ParentClassMethod(); <br>
+                                            C1.ChildClassMethod(); <br>
+                                            Console.ReadKey(); <br>
+                                        } <br>
+                                    } <br>
+                                }
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q28" role="button" aria-expanded="false" aria-controls="Q28">
+                Q28. What is Encapsulation? Explain with an Example?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q28">
+                <div class="card card-body">
+                    <p><strong>Encapsulation</strong></p>
+                    <ul>
+                        <li>Encapsulation is a protective shield that prevents the data from being accessed by the code outside this shield.</li>
+                        <li>Program <br>
+                            <code>
+                                class Employee { <br>
+                                    private string EmployeeName; <br>
+                                    public string Name { get { return EmployeeName; } set { EmployeeName = value; } } <br>
+                                } <br>
+                                class Program { <br>
+                                    static void Main(string[] args){ <br>
+                                        Employee e1 = new Employee(); <br>
+                                        e1.Name = "Samuel"; <br>
+                                        Console.WriteLine(e1.Name); <br>
+                                    } <br>
+                                }
+                            </code>
+                        </li>
+                        <li>Note : In the above program the class Employee is encapsulated as the variable is declared as private. To access these private variables we are using the Name  accessor which contains the get and set method to retrieve and set the values of private fields. Accessors are defined as public so that they can be accessed in other class.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q29" role="button" aria-expanded="false" aria-controls="Q29">
+                Q29. What is Abstraction? Explain with an Example?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q29">
+                <div class="card card-body">
+                    <p><strong>Abstraction</strong></p>
+                    <ul>
+                        <li>Abstraction is the process of identifying only the required characteristics of an object ignoring the irrelevant details.</li>
+                        <li>Program <br>
+                            <code>
+                                abstract class Shape{ <br>
+                                    public abstract int Area(); <br>
+                                } <br>
+                                class Square : Shape{ <br>
+                                    private int Side; <br>
+                                    public Square(int side){ <br>
+                                        Side = side; <br>
+                                    } <br>
+                                    public override int Area(){ <br>
+                                        return Side * Side; <br>
+                                    } <br>
+                                } <br>
+                                class Program{ <br>
+                                    static void Main(string[] args){ <br>
+                                        Shape shape = new Square(4); <br>
+                                        Console.WriteLine("Area of square is {0}.", shape.Area()); <br>
+                                    } <br>
+                                } 
+                            </code>
+                        </li>
+                        <li><strong>Abstraction vs Encapsulation </strong>
+                            <ul>
+                                <li>Encapsulation is data hiding(information hiding) while Abstraction is detail hiding(implementation hiding).</li>
+                                <li>While encapsulation groups together data and methods that act upon the data, data abstraction deal with exposing to the user and hiding the details of implementation.</li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q30" role="button" aria-expanded="false" aria-controls="Q30">
+                Q30. What is Polymorphism? Explain with an Example?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q30">
+                <div class="card card-body">
+                    <p><strong>Polymorphism</strong></p>
+                    <ul>
+                        <li>Polymorphism simply means occurring in more than one form. <br>
+                            That is, the same entity (method or operator or object) can perform different operations in different scenarios.</li>
+                        <li>Program <br>
+                            <code>
+                                class Greetings{ <br>
+                                    public void Greet(){ <br>
+                                        Console.WriteLine("Hello There.!"); <br>
+                                    } <br>
+                                    public void Greet(string name){ <br>
+                                        Console.WriteLine("Hello {0}.!", name); <br>
+                                    } <br>
+                                } <br>
+                                class Program{ <br>
+                                    static void Main(string[] args){ <br>
+                                        Greetings g1 = new Greetings(); <br>
+                                        g1.Greet(); <br>
+                                        g1.Greet("Samuel"); <br>
+                                    } <br>
+                                } <br>
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q31" role="button" aria-expanded="false" aria-controls="Q31">
+                Q31. What is the difference between Method Overriding and Method Hiding?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q31">
+                <div class="card card-body">
+                    <p><strong>Method Overriding vs Method Hiding</strong></p>
+                    <ul>
+                        <li>In <strong>Method Overriding</strong> a BaseClass reference variable pointing to a child class object will invoke the overridden method in the ChildClass. </li>
+                        <li>In <strong>Method Hiding</strong> a BaseClass reference variable pointing to a child class object will invoke the hidden method in the BaseClass.
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q32" role="button" aria-expanded="false" aria-controls="Q32">
+                Q32. What is  Method Overloading is C#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q32">
+                <div class="card card-body">
+                    <p><strong>Method Overloading</strong></p>
+                    <ul>
+                        <li><strong>Method Overloading</strong> allows a class to have multiple methods with same name but different signature.</li>
+                        <li>Overloading can be based on the number, types(int, char, float etc.) and kind(value, ref, out) of parameter.</li>
+                        <li>Signature of a method does not include in the return type and the params modifier.<br>
+                        So it is not possible to overload a function just based on the return type or params modifier.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q33" role="button" aria-expanded="false" aria-controls="Q33">
+                Q33. What are Properties in C#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q33">
+                <div class="card card-body">
+                    <p><strong>Properties</strong></p>
+                    <ul>
+                        <li>Properties are the special type of class members that provides a flexible mechanism to read, write, or compute the value of a private field.</li>
+                        <li>Properties can be used as if they are public data members, but they are actually special methods called accessors. This enables data to be accessed easily and helps to promote the flexibility and safety of methods. </li>
+                        <li>Encapsulation and hiding of information can also be achieved using properties. It uses pre-defined methods which are “get” and “set” methods which help to access and modify the properties.</li>    
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q34" role="button" aria-expanded="false" aria-controls="Q34">
+                Q34. Why do we use Properties?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q34">
+                <div class="card card-body">
+                    <p><strong>Why Properties?</strong></p>
+                    <ul>
+                        <li>Marking a class fields public and exposing it to the external world is bad, as we will not have control over what get assigned and returned. </li>
+                        <li>Problem with public fields.
+                            <ul>
+                                <li>Id should always be non negative number.</li>
+                                <li>Name can not be set to null.</li>
+                                <li>If Name is missing "No Name" should be returned.</li>
+                                <li>PassMarks should be read only.</li>
+                            </ul>
+                        </li>
+                        <li>Programming Languages that does not have properties use getter and setter methods to encapsulate and protect fields.</li>  
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q35" role="button" aria-expanded="false" aria-controls="Q35">
+                Q35. WAP using while loop to print even numbers upto a target number provided by the user.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q35">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                Console.WriteLine("Please Enter Your target number."); <br>
+                                int Target = int.Parse(Console.ReadLine()); <br>
+                                int Start = 0; <br>
+                                while (Start <= Target) <br>
+                                {<br>
+                                    Console.Write(Start+" "); <br>
+                                    Start += 2; <br>
+                                }
+                            </code>
+                        </li>    
                     </ul>                    
                 </div>
               </div>
