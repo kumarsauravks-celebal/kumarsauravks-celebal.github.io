@@ -987,6 +987,139 @@
               </div>
             </div>
         </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q36" role="button" aria-expanded="false" aria-controls="Q36">
+                Q36. What are structs in C#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q36">
+                <div class="card card-body">
+                    <p><strong>Structs</strong></p>
+                    <ul>
+                        <li>Just like classes structs can have
+                            <ul>
+                                <li>Private Fields </li>
+                                <li>Public Properties </li>
+                                <li>Constructor</li>
+                                <li>Methods</li>
+                            </ul> 
+                        </li>  
+                        <li>
+                            The main difference between calss and struct is : Struct is value type whereas Class is a reference type.
+                        </li>  
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q37" role="button" aria-expanded="false" aria-controls="Q37">
+                Q37. What is the difference between Classes and Structs?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q37">
+                <div class="card card-body">
+                    <p><strong>Class vs Struct</strong></p>
+                    <ul>
+                        <li>Struct is value type whereas Class is a reference type.
+                            <ul>
+                                <li>Struct can be stored in stack whereas Class in heap.</li>
+                                <li>Value type hold their values in memory where they are declared, but reference types hold a reference to an object in memory.</li>
+                                <li>Value types are destroyed immidietely after the scope is lost, whereas for reference types only the reference variable is destroyed after scope is lost;the real object is later destroyed by garbage collector.</li>
+                                <li>When we copy a struct into another struct, a new copy of struct gets created and modification on one struct will not affect the values contained by other struct. <br>
+                                <li>When we copy a class into another class, we only get a copy of reference variable. Both the reference variables point to same object on the heap.
+                                        So,operation on one variable will affect the values contained by the other reference variable.
+                                </li>
+                            </ul> 
+                        </li>
+                        <li>Structs cant have destructors but classes have.</li>
+                        <li>Structs can not have Explicit parameter less constructor whereas classes have.</li>
+                        <li>Structs cant inherited from another class whereas class can.</li>
+                        <li>Both classes and struct can inherit from interfaces. <br>
+                        - eg: int(System.Int32), double(System.Double) etc.
+                        <li>Structs are sealed types.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q38" role="button" aria-expanded="false" aria-controls="Q38">
+                Q38. What are Interfaces in C#?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q38">
+                <div class="card card-body">
+                    <p><strong>Interfaces</strong></p>
+                    <ul>
+                        <li>Just like classes interfaces also contains properties, methods, delegates or events but only declaration no implementation.</li>
+                        <li>Interface members are public by default and they dont allow explicit access modifiers.</li>
+                        <li>Interface do not contain fields.</li>
+                        <li>If class/struct inherits from an interface it must provide implementation for all interface members otherwise we get compiler error.</li>
+                        <li>A class/struct can inherit from more than one interface at the same time, whereas classes dont.</li>
+                        <li>Interface can inherit from other interfaces. A class that inherits that interface must provide implementation for all interface members in the entire interface inheritance chain.</li>
+                        <li>We can not create an instance of an interface but an interface reference variable can point to a derived class object.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q39" role="button" aria-expanded="false" aria-controls="Q39">
+                Q39. What are Abstract Classes?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q39">
+                <div class="card card-body">
+                    <p><strong>Abstract Class</strong></p>
+                    <ul>
+                        <li>An abstract class is incomplete and hence can not be instantiated.</li>
+                        <li>It can only be used as base class. </li>
+                        <li>It can not be sealed. </li>
+                        <li>It may contain abstract members(methods, indexers,events) but not mandatory.</li>
+                        <li>A non-abstract class derived from an abstract class must provide implementation for all inherited abstract members.</li>
+                        <li>
+                            If a class inherits an Abstract class , there are two options availabe for that class. <br>
+                            Option 1. provide implementation for all its abstract members.<br>
+                            Option 2. that class has also has to be marked as abstract
+                        </li>    
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q40" role="button" aria-expanded="false" aria-controls="Q40">
+                Q40. Difference between Abstract Class and Interface?
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q40">
+                <div class="card card-body">
+                    <p><strong>Abstract Class vs Interface</strong></p>
+                    <ul>
+                        <li>Abstract class can have implementation for some of its members(methods) but interfaces cant have implementation for any of its members.</li>
+                        <li>Interface cannot have fields whereas abstract class can have fields.</li>
+                        <li>An interface can inherit from another interface only and cant inherit from an abstract class, <br>  whereas an abstract class can inherit from another abstract class or other interface.</li>
+                        <li>A class can inherit from multiple interfaces at the same times, where as a class cannot inherit from multiple classes at the same time.</li>
+                        <li>Abstract class member can have access modifiers whereas interface members can not have access modifiers.</li>  
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
