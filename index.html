@@ -1120,6 +1120,321 @@
               </div>
             </div>
         </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q41" role="button" aria-expanded="false" aria-controls="Q41">
+                Q41. WAP to overload a method Add , with number and type of parameters.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q41">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                using System; <br>
+                                class Program <br>
+                                { <br>
+                                    public void Add(int FN,int SN) <br>
+                                    { <br>
+                                        int Sum = FN + SN; <br>
+                                        Console.WriteLine("The sum of {0} and {1} is : {2}", FN, SN, Sum); <br>
+                                    } <br>
+                                    public void Add(float FN, float SN) <br>
+                                    { <br>
+                                        float Sum = FN + SN; <br>
+                                        Console.WriteLine("The sum of {0} and {1} is : {2}", FN, SN, Sum); <br>
+                                    } <br>
+                                    public void Add(int FN, int SN,out int Sum) <br>
+                                    { <br>
+                                        Sum = FN + SN; <br>
+                                        Console.WriteLine("The sum of {0} and {1} is : {2}", FN, SN, Sum); <br>
+                                    } <br>
+                                    public static void Main() <br>
+                                    { <br>
+                                        Program P = new Program(); <br>
+                                        P.Add(10, 20); <br>
+                                        P.Add(10.3F, 20.5F); <br>
+                                        int Sm; <br>
+                                        P.Add(20, 30, out Sm); <br>
+                                    } <br>
+                                } <br>
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q42" role="button" aria-expanded="false" aria-controls="Q42">
+                Q42. WAP to create a Student class having fields like Id, Name, PassMarks. 
+                Show that Id can be assigned -ve number, Name can be assigned null and PassMarks can be changed to 0.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q42">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                using System; <br>
+                                class Student <br>
+                                { <br>
+                                    public int Id; <br>
+                                    public string Name; <br>
+                                    public int PassMarks=30; <br>
+                                    public void Print() <br>
+                                    { <br>
+                                        Console.WriteLine("Student Details : Id={0}, Name={1}, PassMarks={2}", Id, Name, PassMarks); <br>
+                                    } <br>
+                                } <br>
+                                class Program <br>
+                                { <br>
+                                    public static void Main() <br>
+                                    { <br>
+                                        Student S = new Student(); <br>
+                                        S.Id = -101; <br>
+                                        S.Name = null; <br>
+                                        S.PassMarks = 0; <br>
+                                        S.Print(); <br>
+                                    } <br>
+                                } <br>
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q43" role="button" aria-expanded="false" aria-controls="Q43">
+                Q43. Re-write the same program by making the fields private and creating a get and set methods to access them.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q43">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                using System; <br>
+                                class Student <br>
+                                { <br>
+                                    private int _Id; <br>
+                                    private string _Name; <br>
+                                    private int _PassMarks=30; <br>                                 
+                                    public void SetId(int Id) <br>
+                                    { <br>
+                                        if(Id<=0){ <br>
+                                            throw new Exception("Id should be greater than 0");  <br>
+                                        } <br>
+                                        else <br>
+                                        { <br>
+                                            this._Id = Id; <br>
+                                        } <br>
+                                    } <br>
+                                    public int GetId() <br>
+                                    { <br>
+                                        return this._Id; <br>
+                                    } <br>
+                                
+                                    public void SetName(string Name) <br>
+                                    { <br>
+                                        if (string.IsNullOrEmpty(Name)) <br>
+                                        { <br>
+                                            throw new Exception("Name cant be null value."); <br>
+                                        } <br>
+                                        else <br>
+                                        { <br>
+                                            this._Name = Name; <br>
+                                        } <br>
+                                    } <br>                                
+                                    public string GetName() <br>
+                                    { <br>
+                                        return string.IsNullOrEmpty(this._Name) ? "No Name" : this._Name; <br>
+                                    } <br>
+                                    public int GetPassMarks() <br>
+                                    { <br>
+                                        return this._PassMarks; <br>
+                                    } <br>
+                                    public void Print() <br>
+                                    { <br>
+                                        Console.WriteLine("Student Details : Id={0}, Name={1}, PassMarks={2}", GetId(), GetName(), GetPassMarks()); <br>
+                                    } <br>
+                                } <br>
+                                class Program <br>
+                                { <br>
+                                    public static void Main() <br>
+                                    { <br>
+                                        Student S = new Student(); <br>
+                                        S.SetId(101); <br>
+                                        S.SetName("Kumar"); <br>
+                                        S.Print(); <br>
+                                    } <br>
+                                }  
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q44" role="button" aria-expanded="false" aria-controls="Q44">
+                Q44. Rewrite the same program using properties.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q44">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                using System; <br>
+                                class Student <br>
+                                { <br>
+                                    private int _Id; <br>
+                                    private string _Name; <br>
+                                    private int _PassMarks=30; <br>
+                                    public int Id <br>
+                                    { <br>
+                                        get <br>
+                                        { <br>
+                                            return this._Id; <br>
+                                        } <br>
+                                        set <br>
+                                        { <br>
+                                            if (value <= 0) <br>
+                                            { <br>
+                                                throw new Exception("Id should be greater than 0"); <br>
+                                            } <br>
+                                            else <br>
+                                            { <br>
+                                                this._Id = value; <br>
+                                            } <br>
+                                        } <br>
+                                     } <br>                                
+                                    public string Name <br>
+                                    { <br>
+                                        set <br>
+                                        { <br>
+                                            if (string.IsNullOrEmpty(value)) <br>
+                                            { <br>
+                                                throw new Exception("Name cant be null value."); <br>
+                                            } <br>
+                                            else <br>
+                                            { <br>
+                                                this._Name = value; <br>
+                                            } <br>
+                                        } <br>
+                                        get <br>
+                                        { <br>
+                                            return string.IsNullOrEmpty(this._Name) ? "No Name" : this._Name; <br>
+                                        } <br>                                        
+                                    } <br>
+                                    public int PassMarks <br>
+                                    { <br>
+                                        get <br>
+                                        { <br>
+                                            return this._PassMarks; <br>
+                                        } <br>                                        
+                                    } <br>
+                                    public void Print() <br>
+                                    { <br>
+                                        Console.WriteLine("Student Details : Id={0}, Name={1}, PassMarks={2}", Id, Name, PassMarks); <br>
+                                    } <br>
+                                } <br>
+                                class Program <br>
+                                { <br>
+                                    public static void Main() <br>
+                                    { <br>
+                                        Student S = new Student(); <br>
+                                        S.Id=101; <br>
+                                        S.Name="Kumar"; <br>
+                                        S.Print(); <br>
+                                    } <br>
+                                } 
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div>
+            <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q45" role="button" aria-expanded="false" aria-controls="Q45">
+                Q45.WAP to create a struct Customer having private fields like _Id & _Name,
+                public properties like Id & Name, constructor which takes Id and Name,
+                method PrintDetails to print Id and Name.
+            </a>
+        </div>
+        <div class="row py-1">
+            <div class="col">
+              <div class="collapse show multi-collapse" id="Q45">
+                <div class="card card-body">
+                    <p><strong>Program</strong></p>
+                    <ul>
+                        <li>
+                            <code>
+                                public struct Customer{ <br>
+                                    private int _Id; <br>
+                                    private string _Name; <br>
+                                    public int Id <br>
+                                    { <br>
+                                        get { return this._Id; } <br>
+                                        set { this._Id = value; } <br>
+                                    } <br>
+                                    public string Name <br>
+                                    { <br>
+                                        get { return this._Name; } <br>
+                                        set { this._Name = value; } <br>
+                                    } <br>
+                                    public Customer(int Id,string Name) <br>
+                                    { <br>
+                                        this._Id = Id; <br>
+                                        this._Name = Name; <br>
+                                    } <br>
+                                    public void PrintDetails() <br>
+                                    { <br>
+                                        Console.WriteLine("Student Id is : {0} && Name is : {1}", this._Id, this._Name); <br>
+                                    } <br>
+                                } <br>
+                                public class Program <br>
+                                { <br>
+                                    public static void Main() <br>
+                                    { <br>
+                                        Customer C1 = new Customer(101, "Kumar"); <br>
+                                        C1.PrintDetails();  <br>
+                                        Customer C2 = new Customer(); <br>
+                                        C2.Id = 102;<br>
+                                        C2.Name = "Sam";<br>
+                                        C2.PrintDetails();<br>
+
+                                        Customer C3 = new Customer<br>
+                                        {<br>
+                                            Id = 103,<br>
+                                            Name = "Tom"<br>
+                                        };<br>
+                                        C3.PrintDetails();<br>
+                                    } <br>
+                                }
+                            </code>
+                        </li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+        </div>
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
