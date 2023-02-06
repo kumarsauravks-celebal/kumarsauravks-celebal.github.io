@@ -1,0 +1,80 @@
+Questions
+
+- What are namespace in c# ?
+- What is a Main method in c# program ?
+- Difference between Concatination and Placeholder Syntax in C#. Explain with example.
+- What are built-in types in c#?
+- Difference between Escape Sequence and Verbatin Literal in C#. Exaplain with example.
+
+Questions For Practice
+- What are value types and reference types in c#
+- What is a Null Coalescing Operator? Explain with example.
+- What is Explicit Conversion?
+- Difference between Parse and TryParse
+- WAP to calculate the min and max value of int,float and double.
+
+Questions For Practice
+- What are arrays in c#. Can we store different data types data for an array in c#?
+- Create an integer array to store 5 numbers and display those numbers in console window.
+- What is the difference between | vs || and & vs && Operator.
+- What is a ternary operator ? Take a number input from user , if the number is greater than 10 print "Number is greater than 10" else "Number is less than 10" using ternary operator.
+- WAP to take a number input from user, use switch statement to print number is greater than, less than or equal to 10.
+
+Questions For Practice
+- What are the different types of loops in c#.
+- Difference between while and do while loop in c#.
+- Difference between while and for loop in c#.
+- Explain foreach loop in c#.
+- WAP by following these instructions:
+    - Ask the user "Which type of coffee you want?" , "1 - Small , 2 - Medium , 3 - Large "
+    - If the user enters a number other than 1 - 3 , give a message "Your choice is invalid."
+    - At last give user a message "Thank you for shopping with us." , "Your bill amount is {TotalCoffeeCost}".
+
+Questions For Practice
+- What are Mehods? Difference between static and instance method?
+- What are the different types of method parameters?
+- What are classes in c#?
+- What is a constructor?
+- What are destructors?
+
+Questions For Practice
+- What is a static constructor in C#?
+- What is Inheritance? Explain with an Example?
+- What is Encapsulation? Explain with an Example?
+- What is Abstraction? Explain with an Example?
+- What is Polymorphism? Explain with an Example?
+
+Questions For Practice
+- What is the difference between Method Overriding and Method Hiding?
+- What is  Method Overloading is C#?
+- What are Properties in C#?
+- Why do we use Properties?
+- WAP using while loop to print even numbers upto a target number provided by the user.
+
+Questions For Practice
+- What are structs in C#?
+- What is the difference between Classes and Structs?
+- What are Interfaces in C#?
+- What are Abstract Classes?
+- Difference between Abstract Class and Interface?
+
+52,53,54,55,56
+Questions For Practice
+- WAP to overload a method Add , with number and type of parameters.
+- WAP to create a Student class having fields like Id, Name, PassMarks. 
+        Show that Id can be assigned -ve number, Name can be assigned null and PassMarks can be changed to 0.
+- Re-write the same program by making the fields private and creating a get and set methods to access them.
+- Rewrite the same program using properties.
+- WAP to create a struct Customer having private fields like _Id & _Name.
+        public properties like Id & Name, constructor which takes Id and Name,
+        method PrintDetails to print Id and Name.
+
+- WAP to show that when we copy a reference type, same copy of variable gets created ie. when we try to change one it will effect the other one.
+        Create a class Customer with properties Id and Name.Create two instances of Customer Class and copy one into another.
+        Now assign some value to the Name field of reference variable & print it.
+- Create an interface ICustomer with a Print method, Create class Customer which inherit ICustomer to print "Interface Print method."
+- Create two interfaces ICustomer1 & ICustomer2 having Print1() and Print2() method respectively.
+        Inherit ICustomer2 with ICustomer1 and show class Customer inheriting ICustomer1 have to provide implementation for both the Interface members.
+- Create two interfaces I1 & I2 having a common method InterfaceMethod().
+        In the Program class which inherits both from I1 & I2 show how to print specific Interface method.
+- Rewrite the same program and make the I1 method to be the default method to be called.
