@@ -4,3 +4,13 @@
     border-radius: 10px;
     color: #fff;
 }
+.qna_body a{
+    text-align: left;
+    font-size: 0.9rem !important;
+}
+.card-body{
+    font-size: 0.8rem;
+}
+.btn-sm{
+    margin-bottom: 0.5rem;
+}
