@@ -14,3 +14,26 @@
 .btn-sm{
     margin-bottom: 0.5rem;
 }
+.imgBx{
+    position: fixed;
+    top: 60px;
+    right: 6%;
+    z-index: -1;
+}
+.imgBx img{
+    height: 100px;
+    filter: grayscale(100%);
+}
+
+.nav-pills .nav-link.active, 
+.nav-pills .show>.nav-link {
+    color: gainsboro;
+    background-color: transparent;
+}
+.nav-link {
+    color: #f1f1f1;
+}
+.nav-link:focus, .nav-link:hover {
+    color: #fff;
+}
+
