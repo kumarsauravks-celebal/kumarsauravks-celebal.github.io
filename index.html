@@ -2250,27 +2250,28 @@
                                 <li>
                                     <code>
                                         using System; <br>
-                                        delegate void SampleDelegate(); <br>
+                                        delegate int SampleDelegate(); <br>
                                         class Program <br>
-                                        {<br>
-                                            public static void SampleMethodOne() <br>
+                                        { <br>
+                                            public static int SampleMethodOne() <br>
                                             { <br>
-                                                Console.WriteLine("SampleMethodOne invoked"); <br>
+                                                return 1; <br>
                                             } <br>
-                                            public static void SampleMethodTwo() <br>
+                                            public static int SampleMethodTwo() <br>
                                             { <br>
-                                                Console.WriteLine("SampleMethodTwo invoked"); <br>
+                                                return 2; <br>
                                             } <br>
-                                            public static void SampleMethodThree() <br>
+                                            public static int SampleMethodThree() <br>
                                             { <br>
-                                                Console.WriteLine("SampleMethodThree invoked"); <br>
+                                                return 3; <br>
                                             } <br>
                                             public static void Main() <br>
                                             { <br>
                                                 SampleDelegate del = new SampleDelegate(SampleMethodOne); <br>
                                                 del += SampleMethodTwo; <br>
                                                 del += SampleMethodThree; <br>
-                                                del(); <br>
+                                                int delegateReturnValue = del(); <br>
+                                                Console.WriteLine("Delegate Output Parameter Value is {0}", delegateReturnValue); <br>
                                             } <br>
                                         }
                                     </code>
