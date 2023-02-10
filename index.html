@@ -2147,6 +2147,185 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q61" role="button" aria-expanded="false" aria-controls="Q61">
+                        Q61.Create a delegate SampleDelegate which will point to three methods SampleMethodOne, SampleMethodTwo, SampleMethodThree
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q61">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        delegate void SampleDelegate(); <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void SampleMethodOne() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodOne invoked"); <br>
+                                            } <br>
+                                            public static void SampleMethodTwo() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodTwo invoked"); <br>
+                                            } <br>
+                                            public static void SampleMethodThree() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodThree invoked"); <br>
+                                            } <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                SampleDelegate del1 = new SampleDelegate(SampleMethodOne); <br>
+                                                SampleDelegate del2 = new SampleDelegate(SampleMethodTwo); <br>
+                                                SampleDelegate del3 = new SampleDelegate(SampleMethodThree); <br>
+                                                SampleDelegate del = del1 + del2 + del3; <br>
+                                                del(); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q62" role="button" aria-expanded="false" aria-controls="Q62">
+                        Q62.Rewrite the same program and use += to register method to delegate.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q62">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        delegate void SampleDelegate(); <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void SampleMethodOne() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodOne invoked"); <br>
+                                            } <br>
+                                            public static void SampleMethodTwo() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodTwo invoked"); <br>
+                                            } <br>
+                                            public static void SampleMethodThree() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodThree invoked"); <br>
+                                            } <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                SampleDelegate del = new SampleDelegate(SampleMethodOne); <br>
+                                                del += SampleMethodTwo; <br>
+                                                del += SampleMethodThree; <br>
+                                                del(); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q63" role="button" aria-expanded="false" aria-controls="Q63">
+                        Q63.Show that if delegate has a return type other than void and if the delegate is a multicast delegate , only the value of last invoked method will be returned.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q63">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        delegate void SampleDelegate(); <br>
+                                        class Program <br>
+                                        {<br>
+                                            public static void SampleMethodOne() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodOne invoked"); <br>
+                                            } <br>
+                                            public static void SampleMethodTwo() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodTwo invoked"); <br>
+                                            } <br>
+                                            public static void SampleMethodThree() <br>
+                                            { <br>
+                                                Console.WriteLine("SampleMethodThree invoked"); <br>
+                                            } <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                SampleDelegate del = new SampleDelegate(SampleMethodOne); <br>
+                                                del += SampleMethodTwo; <br>
+                                                del += SampleMethodThree; <br>
+                                                del(); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q64" role="button" aria-expanded="false" aria-controls="Q64">
+                        Q64.Rewrite the same program using output parameter.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q64">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        delegate void SampleDelegate(out int number); <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void SampleMethodOne(out int number) <br>
+                                            { <br>
+                                                number = 1; <br>
+                                            } <br>
+                                            public static void SampleMethodTwo(out int number) <br>
+                                            { <br>
+                                                number=2; <br>
+                                            } <br>
+                                            public static void SampleMethodThree(out int number) <br>
+                                            { <br>
+                                                number=3; <br>
+                                            } <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                SampleDelegate del = new SampleDelegate(SampleMethodOne); <br>
+                                                del += SampleMethodTwo; <br>
+                                                del += SampleMethodThree; <br>
+                                                int delegateOutputValue = -1; <br>
+                                                del(out delegateOutputValue); <br>
+                                                Console.WriteLine("Delegate Output Parameter Value is {0}", delegateOutputValue); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>            
         </div>
         <div class="tab-pane fade" id="pills-sql" role="tabpanel" aria-labelledby="pills-sql-tab">
