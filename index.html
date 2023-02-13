@@ -2327,6 +2327,449 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q65" role="button" aria-expanded="false" aria-controls="Q65">
+                        Q65.What are Enums in C#?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q65">
+                        <div class="card card-body">
+                            <p><strong>Enums</strong></p>
+                            <ul>
+                                <li>Enums are strongly typed constants.</li>
+                                <li>If a program uses set of integral numbers , our program becomes less readable and maintainable. Here we generally use Enums.</li>
+                                <li>Enums are strongly typed hence an explicit cast is needed to convert from enum type to integer type and vice versa. 
+                                       <br> Also an enum of one type can not be implicitly assigned to an enum of another type even though the underlying value of their members are same.</li>
+                                <li>The default underlying type of an enum is int.</li>
+                                <li>Default value of first element is 0 and gets incremented by 1.</li>
+                                <li>It is possible to customize  the underlying type and value.</li>
+                                <li>Enums are value types.</li>
+                                <li><strong>enum</strong> keyword is used to create enumeration.</li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q66" role="button" aria-expanded="false" aria-controls="Q66">
+                        Q66.Create a Employee class having properties like Name and Gender. Create an array of 3 employees of type Employee and print thier name and gender.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q66">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        class Employee <br>
+                                        { <br>
+                                            public string Name { get; set; } <br>
+                                            public int Gender { get; set; } <br>
+                                            public static string GetGender(int genderId) <br>
+                                            { <br>
+                                                switch (genderId) <br>
+                                                { <br>
+                                                    case 1: <br>
+                                                        return "Male"; <br>
+                                                    case 2: <br>
+                                                        return "Female"; <br>
+                                                    case 0: <br>
+                                                        return "Unknown"; <br>
+                                                    default: <br>
+                                                        return "Invalid Gender"; <br>
+                                                } <br>
+                                            } <br>
+                                        } <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                Employee[] arrEmp = new Employee[3]; <br>
+                                                arrEmp[0] = new Employee() { Name = "Aman", Gender = 1 }; <br>
+                                                arrEmp[1] = new Employee() { Name = "Aditi", Gender = 2 }; <br>
+                                                arrEmp[2] = new Employee() { Name = "Rakesh", Gender = 0 }; <br>
+                                                foreach(Employee emp in arrEmp) <br>
+                                                { <br>
+                                                    Console.WriteLine("Employee Name : {0} and Gender is {1}", emp.Name,Employee.GetGender(emp.Gender)); <br>
+                                                } <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q67" role="button" aria-expanded="false" aria-controls="Q67">
+                        Q67.Rewrite te same program using Enums.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q67">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        class Employee <br>
+                                        { <br>
+                                            public string Name { get; set; } <br>
+                                            public Gender Gender { get; set; } <br>
+                                            public static string GetGender(Gender genderId) <br>
+                                            { <br>
+                                                switch (genderId) <br>
+                                                { <br>
+                                                    case Gender.Male: <br>
+                                                        return "Male"; <br>
+                                                    case Gender.Female: <br>
+                                                        return "Female"; <br>
+                                                    case Gender.Unknown: <br>
+                                                        return "Unknown"; <br>
+                                                    default: <br>
+                                                        return "Invalid Gender"; <br>
+
+                                                } <br>
+                                            } <br>
+                                        } <br>
+                                        public enum Gender <br>
+                                        { <br>
+                                            Male, <br>
+                                            Female, <br>
+                                            Unknown <br>
+                                        } <br> 
+                                        class Program <br>
+                                        { <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                Employee[] arrEmp = new Employee[3]; <br>
+                                                arrEmp[0] = new Employee() { Name = "Aman", Gender = Gender.Male }; <br>
+                                                arrEmp[1] = new Employee() { Name = "Aditi", Gender = Gender.Female }; <br>
+                                                arrEmp[2] = new Employee() { Name = "Rakesh", Gender = Gender.Unknown }; <br>
+                                                foreach(Employee emp in arrEmp) <br>
+                                                { <br>
+                                                    Console.WriteLine("Employee Name : {0} and Gender is {1}", emp.Name,Employee.GetGender(emp.Gender)); <br>
+                                                } <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q68" role="button" aria-expanded="false" aria-controls="Q68">
+                        Q68.Create an Enum Gender having Unknown,Male,Female and then print the Names and Values residing in the Enum.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q68">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        public enum Gender <br>
+                                        { <br>
+                                            Male, <br>
+                                            Female, <br>
+                                            Unknown <br>
+                                        } <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                string[] genderNames=Enum.GetNames(typeof(Gender)); <br>
+                                                int[] genderValues=(int[])Enum.GetValues(typeof(Gender)); <br>
+                                                foreach(string name in genderNames) <br>
+                                                { <br>
+                                                    Console.WriteLine(name); <br>
+                                                } <br>
+                                                foreach (int value in genderValues) <br>
+                                                { <br>
+                                                    Console.WriteLine(value); <br>
+                                                } <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q69" role="button" aria-expanded="false" aria-controls="Q69">
+                        Q69.Rewrite the same program , try to change the underlying type of enum to short and also change the default values to different values.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q69">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        public enum Gender:short <br>
+                                        { <br>
+                                            Male=4, <br>
+                                            Female=5, <br>
+                                            Unknown=6 <br>
+                                        } <br>
+                                        class Program <br>
+                                        { <br> 
+                                            public static void Main() <br>
+                                            { <br>
+                                                string[] genderNames=Enum.GetNames(typeof(Gender)); <br>
+                                                short[] genderValues=(short[])Enum.GetValues(typeof(Gender)); <br>
+                                                foreach(string name in genderNames) <br>
+                                                { <br>
+                                                    Console.WriteLine(name); <br>
+                                                } <br>
+                                                foreach (int value in genderValues) <br>
+                                                { <br>
+                                                    Console.WriteLine(value); <br>
+                                                } <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q70" role="button" aria-expanded="false" aria-controls="Q70">
+                        Q70.What are Types in C#?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q70">
+                        <div class="card card-body">
+                            <p><strong>Types</strong></p>
+                            <ul>
+                                <li>Classes , structs, enums, interface, delegate are called types.</li>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        class Cusomer <br>
+                                        { <br>
+                                            private int _id; <br>
+                                            private string _firstName; <br>
+                                            private string _lastName; <br>
+                                            public int Id <br>
+                                            { <br>
+                                                get { return _id; } <br>
+                                                set { _id = value; } <br>
+                                            } <br>
+                                            public string FirstName <br>
+                                            { <br>
+                                                get { return _firstName; } <br>
+                                                set { _firstName = value; } <br>
+                                            } <br>
+                                            public string LastName <br>
+                                            { <br>
+                                                get { return _lastName; } <br>
+                                                set { _lastName = value; } <br>
+                                            } <br>
+                                            public void PrintFullName() <br>
+                                            { <br>
+                                                Console.WriteLine("Full Name {0} {1}", this._firstName, this._lastName); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                                <li>In this example Customer is a Type.</li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q71" role="button" aria-expanded="false" aria-controls="Q71">
+                        Q71.What are Type members?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q71">
+                        <div class="card card-body">
+                            <p><strong>Type members</strong></p>
+                            <ul>
+                                <li>The fields, properties, constructor, methods etc that reside in a type are called type members.</li>
+                                <li>In above code example fields, properties, constructor, method are type members of the Customer Type.</li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q72" role="button" aria-expanded="false" aria-controls="Q72">
+                        Q72.What are Regions?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q72">
+                        <div class="card card-body">
+                            <p><strong>Regions</strong></p>
+                            <ul>
+                                <li>Using regions we can expand and collapse sections of our code.</li>
+                                <li><code>
+                                    #region Methods <br>
+                                    public void Greetings() <br>
+                                    { <br>
+                                        Console.WriteLine("Hello World"); <br>
+                                    } <br>
+                                    #endregion
+                                </code>  
+                                </li>                                  
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q73" role="button" aria-expanded="false" aria-controls="Q73">
+                        Q73.What are Access Modifiers in C#?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q73">
+                        <div class="card card-body">
+                            <p><strong>Access Modifiers</strong></p>
+                            <ul>
+                                <li>There are 5 types of access modifiers in c#</li>
+                                <li><strong>Private</strong> - Private members are availabe only within the containing type. <strong>[Default for Type members]</strong> </li>
+                                <li><strong>Public</strong> - Public members are available anywhere, no restrictions.</li>
+                                <li><strong>Protected</strong> - Protected members are available within the containing type and the type that derive from the containing type.(base.Id,this.Id)</li>
+                                <li><strong>Internal</strong> - Internal members are accessible anywhere in the containing assembly. <strong>[Default for Types]</strong></li>
+                                <li><strong>Protected Internal</strong> - Anywhere in the containing assembly and from within a derived class in any other assembly.</li>                                  
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q74" role="button" aria-expanded="false" aria-controls="Q74">
+                        Q74.Create a Type Customer having Type members like fields, properties and method
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q74">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        class Cusomer <br>
+                                        { <br>
+                                            private int _id; <br>
+                                            private string _firstName; <br>
+                                            private string _lastName; <br>
+                                            public int Id <br>
+                                            { <br>
+                                                get { return _id; } <br>
+                                                set { _id = value; } <br>
+                                            } <br>
+                                            public string FirstName <br>
+                                            { <br>
+                                                get { return _firstName; } <br>
+                                                set { _firstName = value; } <br>
+                                            } <br>
+                                            public string LastName <br>
+                                            { <br>
+                                                get { return _lastName; } <br>
+                                                set { _lastName = value; } <br>
+                                            } <br>
+                                            public void PrintFullName() <br>
+                                            { <br>
+                                                Console.WriteLine("Full Name {0} {1}", this._firstName, this._lastName); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q75" role="button" aria-expanded="false" aria-controls="Q75">
+                        Q75.Create a Type Customer having Type members like fields, properties and method
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q75">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        class Customer <br>
+                                        { <br>
+                                            #region Fields <br>
+                                            private string _firstName; <br>
+                                            private string _lastName; <br>
+                                            #endregion <br><br>
+                                            #region Properties <br>
+                                            public string FirstName <br>
+                                            { <br>
+                                                get{ return this._firstName; <br> }
+                                                set{ this._firstName = value; } <br>
+                                            } <br>
+                                            public string LastName { <br>
+                                                get { return this._lastName; } <br>
+                                                set { this._lastName = value; } <br>
+                                            } <br>
+                                            #endregion <br> <br>
+                                            #region Methods <br>
+                                            public void PrintFullName() <br>
+                                            { <br>
+                                                Console.WriteLine("Your fullname is {0} {1}", this._firstName, this._lastName); <br>
+                                            } <br>
+                                            #endregion <br>
+                                        } <br>
+                                        class Program <br>
+                                        { <br>
+                                            #region Main Method <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                Customer C1 = new Customer(); <br>
+                                                C1.FirstName = "Kumar"; <br>
+                                                C1.LastName = "Saurav"; <br>
+                                                C1.PrintFullName(); <br>
+                                            } <br>
+                                            #endregion <br>
+                                        } 
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>            
         </div>
         <div class="tab-pane fade" id="pills-sql" role="tabpanel" aria-labelledby="pills-sql-tab">
@@ -2335,7 +2778,7 @@
                     <button class="btn btn-success btn-sm" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse1" aria-expanded="false" aria-controls="Q1 Q2">Show/Hide Answers</button>
                 </h1>
                 <div class="imgBx">
-                    <img src="./sql.png" alt="c_sharp">
+                    <img src="./sqln.png" alt="c_sharp">
                 </div>
             </div>
             <div class="container">
