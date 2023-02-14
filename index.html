@@ -2770,6 +2770,160 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q76" role="button" aria-expanded="false" aria-controls="Q76">
+                        Q76.Create a Customer class with a protected field Id. Create another class CorporateCustomer and show that protected members can only be accessible through a class which is derived from it.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q76">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        class Customer <br>
+                                        { <br>
+                                            protected int Id; <br>
+                                        } <br>
+                                        class CorporateCustomer:Customer <br>
+                                        { <br>
+                                            public void Print() <br>
+                                            { <br>
+                                                Id = 101; <br>
+                                                Console.WriteLine("Id is {0}.", Id); <br>
+                                            } <br>
+                                        } <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                CorporateCustomer CC = new CorporateCustomer(); <br>
+                                                CC.Print(); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q77" role="button" aria-expanded="false" aria-controls="Q77">
+                        Q77.What are Attributes in c#?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q77">
+                        <div class="card card-body">
+                            <p><strong>Attributes</strong></p>
+                            <ul>
+                                <li>Attributes allow you to add declarative information to your programs. This information can be then queried at runtime using reflection.</li>
+                                <li>There are several Pre-defined Attribute provided by .Net . It is also possible to create your own custom attribute.</li>
+                                <li>A few pre-defined attributes within the .Net framework:
+                                    <ul>
+                                        <li>Obsolate : Marks types and type members outdated. </li>
+                                        <li>WebMethod : To expose a method as an XML Web service method. </li>
+                                        <li>Serializable - Indicates that a class can be serialized. </li>                                        
+                                    </ul>                                       
+                                <li>It is possible to customize the attributes using parameters. </li>
+                                <li>An attribute is a class that inherits from System.Attribute base class.</li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q78" role="button" aria-expanded="false" aria-controls="Q78">
+                        Q78.Create a Calculator class with a method "Add" to add and print two numbers. Add a new method "Add" which takes a list of integers, adds all and print the sum. Make the first method Obsolate using attributes.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q78">
+                        <div class="card card-body">
+                            <p><strong>Program</strong></p>
+                            <ul>
+                                <li>
+                                    <code>
+                                        using System; <br>
+                                        using System.Collections.Generic; <br>
+                                        class Calculator <br>
+                                        { <br>
+                                            [Obsolete("Please use method Add(List&lt;int&gt;)")] <br>
+                                            public void Add(int num1,int num2) <br>
+                                            { <br>
+                                                Console.WriteLine("The sum is {0}", num1 + num2); <br>
+                                            } <br>
+                                            public void Add(List&lt;int&gt; numbers) <br>
+                                            { <br>
+                                                int Sum = 0; <br>
+                                                foreach(int Number in numbers) <br>
+                                                { <br>
+                                                    Sum += Number; <br>
+                                                } <br>
+                                                Console.WriteLine("The sum is {0}", Sum); <br>
+                                            } <br>
+                                        } <br>
+                                        class Program <br>
+                                        { <br>
+                                            public static void Main() <br>
+                                            { <br>
+                                                Calculator C1 = new Calculator(); <br>
+                                                C1.Add(34, 42);//getting a warning with message <br>
+                                                List&lt;int&gt; nums = new List&lt;int&gt;() { 12,23,23,24,53 }; <br>
+                                                C1.Add(nums); <br>
+                                            } <br>
+                                        }
+                                    </code>
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q79" role="button" aria-expanded="false" aria-controls="Q79">
+                        Q79.What is Reflection in C#?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q79">
+                        <div class="card card-body">
+                            <p><strong>Reflection</strong></p>
+                            <ul>
+                                <li>
+                                    Reflection is the ability of inspecting an assemblie's metadata at runtime.  It is used to find all types in an assembly and/or dynamically invoke methods in an assembly. This includes information about the type, properties, methods, and events of an object. With Reflection, we can dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties.
+                                </li>
+                            </ul>                    
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#Q80" role="button" aria-expanded="false" aria-controls="Q80">
+                        Q80. What are the various uses of Reflection?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse" id="Q80">
+                        <div class="card card-body">
+                            <p><strong>Uses of Reflection</strong></p>
+                            <ol>
+                                <li>When you drag and drop a button on a win forms or an asp.net application. The properties window uses reflection to show all the properties of the Button class. So,reflection is extensivley used by IDE or a UI designers. </li>
+                                <li>Late binding can be achieved by using reflection. You can use reflection to dynamically create an instance of a type, about which we don't have any information at compile time. So, reflection enables you to use code that is not available at compile time.</li>
+                                <li>Consider an example where we have two alternate implementations of an interface. You want to allow the user to pick one or the other using a config file. With reflection, you can simply read the name of the class whose implementation you want to use from the config file, and instantiate an instance of that class. This is another example for late binding using reflection.</li>
+                            </ol>                  
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>            
         </div>
         <div class="tab-pane fade" id="pills-sql" role="tabpanel" aria-labelledby="pills-sql-tab">
