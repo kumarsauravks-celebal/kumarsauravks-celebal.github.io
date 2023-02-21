@@ -3286,6 +3286,269 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ16" role="button" aria-expanded="false" aria-controls="SQ16">
+                        Q16. What are unique keys in Sql?                        
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ16">
+                        <div class="card card-body">
+                            <p><strong>Unique Key</strong></p>  
+                            <ul>
+                                <li>The UNIQUE constraint ensures that all values in a column are different. </li>
+                                <li>Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.</li>
+                                <li>A PRIMARY KEY constraint automatically has a UNIQUE constraint.</li>
+                                <li>Primary key does not allow any null but Unique key has only one null.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ17" role="button" aria-expanded="false" aria-controls="SQ17">
+                        Q17. Write query to make the phone number column to accept unique values.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ17">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        alter table tblEmp1 add constraint UQ_tblEmp1_Phone Unique(Phone)
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ18" role="button" aria-expanded="false" aria-controls="SQ18">
+                        Q18. Create a table tblEmp1 with fields Id, Name, Email, Phone. Make Email, Phone unique and finally write query to delete the unique key for phone.                        
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ18">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        CREATE TABLE tblEmp1 ( <br>
+                                        Id int identity(1,1), <br>
+                                        Name varchar(255) NOT NULL, <br>
+                                        Email varchar(255) NOT NULL UNIQUE, <br>
+                                        Phone bigint NOT NULL UNIQUE <br>
+                                        )                           
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        alter table tblEmp1 drop constraint UQ_tblEmp1_Phone 
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ19" role="button" aria-expanded="false" aria-controls="SQ19">
+                        Q19. Write query to select the distinct city from tblPerson.                        
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ19">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select distinct city from tblPerson 
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ20" role="button" aria-expanded="false" aria-controls="SQ20">
+                        Q20. Write a query to select an Employee from tblEmp whose age is the highest among all the other employees.                       
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ20">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select top 1 * from tblPerson order by Age DESC
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ21" role="button" aria-expanded="false" aria-controls="SQ21">
+                        Q21. Write a query to select persons from tblPerson whose location is London. 
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ21">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson where Location='London'
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ22" role="button" aria-expanded="false" aria-controls="SQ22">
+                        Q22. Write a query to select persons from tblPerson whose location is other than London.                       
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ22">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson where Location<>'London' <br>
+                                        select * from tblPerson where Location!='London'    
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ23" role="button" aria-expanded="false" aria-controls="SQ23">
+                        Q23. Write a query to select persons from tblPerson whose age is 20,23,29. 
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ23">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson where Age = 20 or Age = 23 or Age = 29 <br>
+	                                    select * from tblPerson where Age in  (20,23,29)    
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ24" role="button" aria-expanded="false" aria-controls="SQ24">
+                        Q24. Write a query to select persons from tblPerson whose age is between 20 and 25.                      
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ24">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson where Age BETWEEN 20 And 25
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ25" role="button" aria-expanded="false" aria-controls="SQ25">
+                        Q25. Write a query to select persons from tblPerson whose location starts with L. 
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ25">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson where Location like 'L%'
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ26" role="button" aria-expanded="false" aria-controls="SQ26">
+                        Q26. Write a query to select persons from tblPerson whose location is London or India and age is greater than 25. 
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ26">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson where (Location = 'London' or Location = 'India') AND Age > 25
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ27" role="button" aria-expanded="false" aria-controls="SQ27">
+                        Q27. Write a query to select persons from tblPerson in alphabatical order. 
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ27">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select * from tblPerson order by Name
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
