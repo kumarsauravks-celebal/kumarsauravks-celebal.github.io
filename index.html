@@ -3662,6 +3662,297 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ33" role="button" aria-expanded="false" aria-controls="SQ33">
+                        Q33. What are Joins in Sql?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ33">
+                        <div class="card card-body">
+                            <p><strong>Joins</strong></p>  
+                            <ul>
+                                <li>Joins are used to retrieve data from 2 or more related tables.</li>
+                                <li>In general tables are related to each other using foreign key constraints.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ34" role="button" aria-expanded="false" aria-controls="SQ34">
+                        Q34. What is Inner Join?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ34">
+                        <div class="card card-body">
+                            <p><strong>Inner Joins</strong></p>  
+                            <ul>
+                                <li>Inner Join returns only the matching rows between both the tables.</li>
+                                <li>Non matching rows are eliminated.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ35" role="button" aria-expanded="false" aria-controls="SQ35">
+                        Q35. Write a query to join Employee and Department to show DepartmentName Against employee
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ35">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li><code>select Name,Gender,Salary,DepName from tableEmployee join tableDepartment on tableEmployee.DepartmentId=tableDepartment.Id</code></li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ36" role="button" aria-expanded="false" aria-controls="SQ36">
+                        Q36. What is Left Join?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ36">
+                        <div class="card card-body">
+                            <p><strong>Left Join</strong></p>  
+                            <ul>
+                                <li>
+                                Left Join returns all the matching rows + non matching rows from the left table 
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ37" role="button" aria-expanded="false" aria-controls="SQ37">
+                        Q37. Write a query to join Employee and Department to show the matching and non matching Employee records with DepartmentName
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ37">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select Name,Gender,Salary,DepName from tableEmployee left join tableDepartment on tableEmployee.DepartmentId=tableDepartment.Id
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ38" role="button" aria-expanded="false" aria-controls="SQ38">
+                        Q38. What is Right Join?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ38">
+                        <div class="card card-body">
+                            <p><strong>Right Join</strong></p>  
+                            <ul>
+                                <li>
+                                    Right Join returns all the matching rows + non matching rows from the right table.
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ39" role="button" aria-expanded="false" aria-controls="SQ39">
+                        Q39. Write a query to join employee and department to show the matching and non matching rows from department table.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ39">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select Name,Gender,Salary,DepName from tableEmployee right join tableDepartment on tableEmployee.DepartmentId=tableDepartment.Id
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ40" role="button" aria-expanded="false" aria-controls="SQ40">
+                        Q40. What is Full Join?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ40">
+                        <div class="card card-body">
+                            <p><strong>Full Join</strong></p>  
+                            <ul>
+                                <li>
+                                    Full Join returns all rows from both the left and right tables, including the non mathing rows.
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ41" role="button" aria-expanded="false" aria-controls="SQ41">
+                        Q41. What is Cross Join?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ41">
+                        <div class="card card-body">
+                            <p><strong>Cross Join</strong></p>  
+                            <ul>
+                                <li>
+                                    Cross Join produces the cartesian product of the two tables involved in the join
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ42" role="button" aria-expanded="false" aria-controls="SQ42">
+                        Q42. Write a query to display cartesian product of the two tables, Employee and Department.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ42">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select Name,Gender,Salary,DepName from tableEmployee cross join tableDepartment
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ43" role="button" aria-expanded="false" aria-controls="SQ43">
+                        Q43. Define Self Join in Sql with Example?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ43">
+                        <div class="card card-body">
+                            <p><strong>Self Join</strong></p>  
+                            <ul>
+                                <li>
+                                    Self Join is basically joining a table with itself
+                                </li>
+                                <li>
+                                    Suppose we have a table tableEmployee1 having columns like EmployeeId, Name, ManagerId
+                                </li>
+                                <li>Example :  Inner Self Join <br>
+                                    <code>
+                                        select E.Name as Employee,M.Name as Manager from tableEmployee1 E join tableEmployee1 M on E.ManagerId=M.EmployeeId
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ44" role="button" aria-expanded="false" aria-controls="SQ44">
+                        Q44. What is ISNULL() function? Explain with example.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ44">
+                        <div class="card card-body">
+                            <p><strong>ISNULL function</strong></p>  
+                            <ul>
+                                <li>ISNULL() function returns a specified value if the expression is NULL.</li>
+                                <li>If the expression is NOT NULL, this function returns the expression. </li>
+                                <li>Example <br>
+                                    <code>
+                                        SELECT ISNULL('Hello', 'Welcome'); <br>
+                                        SELECT ISNULL(null, 'Welcome');
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ45" role="button" aria-expanded="false" aria-controls="SQ45">
+                        Q45. What is Case statement in Sql? Explain with example.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ45">
+                        <div class="card card-body">
+                            <p><strong>Case statement</strong></p>  
+                            <ul>
+                                <li>CASE statement operates if-then-else type of logical queries. </li>
+                                <li>It returns the value when the specified condition evaluates to True.</li>
+                                <li>When no condition evaluates to True, it returns the value of the ELSE part.</li>
+                                <li>When there is no ELSE part and no condition evaluates to True, it returns a NULL value.</li>
+                                <li>
+                                    <code>
+                                        SELECT Roll_No, Stu_Name, Stu_Subject, Stu_marks,  <br>
+                                        CASE  <br>
+                                        WHEN Stu_Marks >= 50 THEN 'Student_Passed'  <br>
+                                        ELSE 'Student_Failed'  <br>
+                                        END AS Student_Result  <br>
+                                        FROM Student_Details;  
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ46" role="button" aria-expanded="false" aria-controls="SQ46">
+                        Q46. What is COALESCE() function? Explain with example.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ46">
+                        <div class="card card-body">
+                            <p><strong>COALESCE function</strong></p>  
+                            <ul>
+                                <li>COALESCE() function returns the first non-null value in a list.</li>
+                                <li><strong>Example :</strong> <code>SELECT COALESCE(null, 1, 2, 'Hello',null);</code> </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
