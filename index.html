@@ -3953,6 +3953,234 @@
                       </div>
                     </div>
                 </div>
+
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ47" role="button" aria-expanded="false" aria-controls="SQ47">
+                        Q47. Create a table tableEmployee1 having fields like EmployeeId, Name, ManagerId. 
+                    </a>
+                    <ul class="my-2 list-ul">
+                        <li>Insert 10 records in it but make ManagerId Id of some records to be null.</li>
+                        <li>Use Self join to display the name of Manager for each employee.</li>
+                        <li>In case on null value display the column value as 'No Manager' by using isnull, case and coalesce.</li>
+                    </ul>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ47">
+                        <div class="card card-body">
+                            <p><strong>Handling null</strong></p>  
+                            <ul>
+                                <li>
+                                    ISNULL() function <br>
+		                            <code> select E.Name as Employee,isnull(M.Name,'No Manager') as Manager from tableEmployee1 E left join tableEmployee1 M on E.ManagerId=M.EmployeeId</code>
+                                </li>
+                                <li>
+                                    Case statement <br>
+		                            <code>select E.Name as Employee,case when M.Name is null then 'No Manager' else M.Name end as Manager from tableEmployee1 E left join tableEmployee1 M on E.ManagerId=M.EmployeeId</code>
+                                </li>
+                                <li>
+                                    COALESCE() function <br>
+			                        <code>select E.Name as Employee,coalesce(M.Name,'No Manager') as Manager from tableEmployee1 E left join tableEmployee1 M on E.ManagerId=M.EmployeeId</code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ48" role="button" aria-expanded="false" aria-controls="SQ48">
+                        Q48. Difference between union and union all?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ48">
+                        <div class="card card-body">
+                            <p><strong>Union and Union All</strong></p>  
+                            <ul>
+                                <li>These operators used to combine result set of two or more select queries.</li>
+                                <li>the number,data types, order of columns in the select statement need to be the same</li>
+                                <li><code>select * from tblIndCustomers union select * from tblUkCustomers</code></li>
+                                <li><code>select * from tblIndCustomers union all select * from tblUkCustomers</code></li>
+                                <li><strong>union</strong> removes duplicare records, whereas <strong> union all</strong> doesnt.</li>
+                                <li><strong>union</strong> has to perform distinct sort to remove duplicates, which makes it less faster than <strong>union all.</strong></li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ49" role="button" aria-expanded="false" aria-controls="SQ49">
+                        Q49. What are stored procedures in sql?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ49">
+                        <div class="card card-body">
+                            <p><strong>Stored Procedures</strong></p>  
+                            <ul>
+                                <li>Stored Procedures is a group of T-Sql(Transact SQL) statement.</li>
+                                <li>When we want to execute same piece of query again and again we can use a sp and we can call it by name only.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ50" role="button" aria-expanded="false" aria-controls="SQ50">
+                        Q50. Create a stored procedure to retieve the values of tblEmployee.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ50">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create proc sp_getEmployee <br>
+                                        as <br>
+                                        begin <br>
+                                            select Name,Gender from tblEmployee <br>
+                                        end <br>
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ51" role="button" aria-expanded="false" aria-controls="SQ51">
+                        Q51. Create a procedure sp_getEmployeeByDepIdGender having parameter @DepId, @Gender to show the filtered Employee based on Department and Gender.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ51">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create proc sp_getEmployeeByDepIdGender <br>
+                                        @DepId int, <br>
+                                        @Gender nvarchar(10) <br>
+                                        as  <br>
+                                        begin <br>
+                                            select * from tblEmployee where Gender=@Gender AND DepId=@DepId <br>
+                                        end
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ52" role="button" aria-expanded="false" aria-controls="SQ52">
+                        Q52. How can we retrieve the text of a created stored produre?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ52">
+                        <div class="card card-body">
+                            <p><strong>Stored Procedure</strong></p>  
+                            <ul>
+                                <li>
+                                    Designer : Right click on sp -> Script Stored Procedures -> Create To -> New Query Editor window
+                                </li>
+                                <li>
+                                    Query : <code> sp_helptext proc_name</code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ53" role="button" aria-expanded="false" aria-controls="SQ53">
+                        Q53. How to delete a procedure?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ53">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>drop proc proc_name</code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ54" role="button" aria-expanded="false" aria-controls="SQ54">
+                        Q54. How to encrypt a procedure?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ54">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        alter proc sp_getEmployee <br>
+                                        with encryption <br>
+                                        as <br>
+                                        begin <br>
+                                        select Name,Gender from tblEmployee <br>
+                                        end
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ55" role="button" aria-expanded="false" aria-controls="SQ55">
+                        Q55. What is an output parameter in terms of a sp?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ55">
+                        <div class="card card-body">
+                            <p><strong>Output Parameter</strong></p>  
+                            <ul>                                
+                                <li>
+                                   <strong>Output parameter</strong> is a parameter whose value is passed out of the stored procedure/function module, back to the calling PL/SQL block
+                                </li>
+                                <li>To create sp wih output parameter , we use keyword out or output.</li>
+                                <li>If we dont specify the output keyword, when executig sp the variable will be null</li>
+                                <li>Query <br>
+                                    <code>
+                                        create proc spEmployeeByGender <br>
+                                        @Gender nvarchar(20), <br>
+                                        @Count int out <br>
+                                        as <br>
+                                        begin <br>
+                                            select @Count= Count(Id) from tblEmployee where Gender=@Gender <br>
+                                        end <br>                                
+                                        declare @EmpCount int <br>
+                                        exec spEmployeeByGender 'Male',@EmpCount output <br>
+                                        print @EmpCount
+                                        </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
