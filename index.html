@@ -4181,6 +4181,437 @@
                       </div>
                     </div>
                 </div>
+
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ56" role="button" aria-expanded="false" aria-controls="SQ56">
+                        Q56. Create a table tblDateTime and store different date datatypes like date,time,smalldatetime,datetime,datetime2,datetimeoffset. Finally insert GETDATE() to all the columns and check the difference.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ56">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                  <code>
+                                    create table tblDateTime <br>
+                                    ( <br>
+                                    c_time time, <br>
+                                    c_date date, <br>
+                                    c_smalldatetime smalldatetime, <br>
+                                    c_datetime datetime, <br>
+                                    c_datetime2 datetime2, <br>
+                                    c_datetimeoffset datetimeoffset <br>
+                                    ) <br>
+                                    insert into tblDateTime values(GETDATE(),GETDATE(),GETDATE(),GETDATE(),GETDATE(),GETDATE()) <br>
+                                    select * from tblDateTime
+                                  </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ57" role="button" aria-expanded="false" aria-controls="SQ57">
+                        Q57. How can we identify a string is a valid date using sql predefined function.Check 'John Doe',GetDate(),'2021-11-04 17:51:59.268','2021-11-04 17:51:59.2680955' is valid or not.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ57">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                  <code>
+                                    select ISDATE('John Doe') <br>
+                                    select ISDATE(GetDate()) <br>
+                                    select ISDATE('2021-11-04 17:51:59.268') <br>
+                                    select ISDATE('2021-11-04 17:51:59.2680955')
+                                  </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ58" role="button" aria-expanded="false" aria-controls="SQ58">
+                        Q58. Check the current date and '05/15/2021' day, month year using sql predefined function.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ58">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        select DAY(GETDATE()) <br>
+                                        select DAY('05/15/2021') <br> <br>
+
+                                        select MONTH(GETDATE()) <br>
+                                        select MONTH('05/15/2021') <br> <br>
+
+                                        select YEAR(GETDATE()) <br>
+                                        select YEAR('05/15/2021')
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ59" role="button" aria-expanded="false" aria-controls="SQ59">
+                        Q59. Write a query to select the day and month of your birthday using sql predefined function.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ59">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        declare @birthday datetime <br>
+                                        set @birthday='1998-09-09 10:20:30.627' <br>
+                                        select DATENAME(WEEKDAY,@birthday) as Day, DATENAME(MONTH,@birthday) as Month
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ60" role="button" aria-expanded="false" aria-controls="SQ60">
+                        Q60. Write a query to show the difference between DatePart and DateName with current date.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ60">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        select DATEPART(MONTH,GETDATE()) <br>
+                                        select DATENAME(MONTH,GETDATE())
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ61" role="button" aria-expanded="false" aria-controls="SQ61">
+                        Q61. Write query for the following:
+                    </a>
+                    <ol class="my-2 list-ul">
+                        <li>Add one month to the current date.</li>
+                        <li>Subtract 20 days to the current date.</li>
+                        <li>Calculate the difference between the months from '11/30/2021' to '01/31/2023'</li>
+                        <li>Calculate the difference between the days from '11/30/2021' to '01/31/2023'</li>
+                    </ol>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ61">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ol>                                
+                                <li>
+                                    <code>
+                                        select DATEADD(MONTH,1,GETDATE())
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select DATEADD(DAY,-20,GETDATE())
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select DATEDIFF(MONTH,'11/30/2005','01/31/2006')
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select DATEDIFF(DAY,'11/30/2005','01/31/2006')
+                                    </code>
+                                </li>
+                            </ol>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ62" role="button" aria-expanded="false" aria-controls="SQ62">
+                        Q62. Write a function which accepts a date of birth and returns the age in years months and days.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ62">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        create function fnComputeAge(@DOB datetime) <br>
+                                        returns nvarchar(50) <br>
+                                        as <br>
+                                        begin <br>
+                                        declare @tempdate datetime,@years int, @months int, @days int <br>
+                                        select @tempdate=@DOB <br>
+                                        select @years=DATEDIFF(YEAR,@tempdate,GETDATE()) - <br>
+                                                        case <br>
+                                                            when (MONTH(@DOB) > MONTH(GETDATE())) or <br>
+                                                            (MONTH(@DOB) = MONTH(GETDATE()) AND DAY(@DOB) > DAY(GETDATE())) <br>
+                                                            THEN 1 ELSE 0 <br>
+                                                        end <br>
+                                        select @tempdate=DATEADD(YEAR,@years,@tempdate) <br>
+                                        select @months = DATEDIFF(MONTH,@tempdate,GETDATE()) - <br>
+                                                        case <br>
+                                                            when DAY(@DOB) > DAY(GETDATE()) <br>
+                                                            then 1 else 0 <br>
+                                                        end <br>
+                                        select @tempdate=DATEADD(MONTH,@months,@tempdate) <br>
+                                        select @days=DATEDIFF(DAY,@tempdate,GETDATE()) <br>
+                                            declare @Age nvarchar(50) <br>
+                                            set @Age=CAST(@years as nvarchar(4)) + ' Years '+ CAST(@months as nvarchar(2)) + ' Months '+CAST(@days as nvarchar(2))+ ' Days ' <br>
+                                            return @Age <br>
+                                        end    
+                                    </code>
+                                </li>
+                                <li><strong>Execution : </strong>select dbo.fnComputeAge('09/09/1998')</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ63" role="button" aria-expanded="false" aria-controls="SQ63">
+                        Q63. Select the current date in nvarchar using CAST and CONVERT both. Use Convert and style the date with dd/mm/yyyy format.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ63">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        select CAST(GETDATE() as nvarchar) as ConvertedDate <br>
+                                        select CONVERT(nvarchar,GETDATE()) as ConvertedDate <br>
+                                        select Convert(nvarchar,GetDate(),103) as ConvertedDate
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ64" role="button" aria-expanded="false" aria-controls="SQ64">
+                        Q64. Create a query to concatenate a string 'JohnDoe' and an integer Id 101.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ64">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        declare @Id int <br>
+                                        set @Id=101 <br>
+                                        select 'JohnDoe'+' - '+CAST(@Id as nvarchar)
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ65" role="button" aria-expanded="false" aria-controls="SQ65">
+                        Q65.  Write the query for the following using appropriate functions :-
+                    </a>
+                    <ol class="my-2 list-ul">
+                        <li>Find the absolute value of -101.5</li>
+                        <li>Find the ceiling value of 15.2 and -15.2</li>
+                        <li>Find the floor value of 15.2 and -15.2</li>
+                        <li>Find 2 to the power 3.</li>
+                        <li>Find square of 9 .</li>
+                        <li>Find square root of 81</li>
+                        <li>Generate a random number between 1 and 100.</li>
+                        <li>Print 10 random numbers between 1 and 100.</li>
+                    </ol>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ65">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ol>                                
+                                <li>
+                                    <code>
+                                        select ABS(-101.5) as AbsoluteValue
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select CEILING(15.2),CEILING(-15.2)
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select FLOOR(15.2),FLOOR(-15.2)
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select POWER(2,3) as PowerValue
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select SQUARE(9) as SqareValue
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select SQRT(81) as SqrtValue
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        select FLOOR(RAND()*100) as RandomValue
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>
+                                        declare @Counter int <br>
+                                        set @Counter=1 <br>
+                                        while(@Counter&lt;=10) <br>
+                                        begin <br>
+                                        print FLOOR(RAND()*100) <br>
+                                        set @Counter+=1 <br>
+                                        end
+                                    </code>
+                                </li>
+                            </ol>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ66" role="button" aria-expanded="false" aria-controls="SQ66">
+                        Q66. Create a scalar function that takes the date of birth from user and return his age in years.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ66">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        create function CalculateAge(@DOB Date) <br>
+                                        returns int <br>
+                                        as begin <br>
+                                        declare @Age int <br>
+                                        set @Age=DATEDIFF(YEAR,@DOB,GETDATE())- <br>
+                                                case  <br>
+                                                    when (MONTH(@DOB) > MONTH(GETDATE())) or <br>
+                                                        (MONTH(@DOB) = MONTH(GETDATE()) and DAY(@DOB) > DAY(GETDATE())) <br>
+                                                    then 1 <br>
+                                                    else 0 <br>
+                                                end <br>
+                                        return @AGE <br>
+                                        end
+                                    </code>
+                                </li>
+                                <li>select dbo.CalculateAge('09/09/1998') as Age</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ67" role="button" aria-expanded="false" aria-controls="SQ67">
+                        Q67. Create a table valued function which takes the Gender as parameter and return the table with specified gender.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ67">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        create function fn_EmployeesByGender(@Gender nvarchar(10)) <br>
+                                        returns table <br>
+                                        as <br>
+                                        return (select Id,Name,Gender,City from tblEmp2 where Gender=@Gender)
+                                    </code>
+                                </li>
+                                <li>select * from dbo.fn_EmployeesByGender('Female')</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ68" role="button" aria-expanded="false" aria-controls="SQ68">
+                        Q68. Create a inline table valued function fn_ITVF_GetEmployees() and multi statement table valued function fn_MSTVF_GetEmployees() to return a table having Name,Gender,City columns.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ68">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>                                
+                                <li>
+                                    <code>
+                                        create function fn_ITVF_GetEmployees() <br>
+                                        returns table <br>
+                                        as <br>
+                                        return (select Name,Gender,City from tblEmp2)
+                                    </code>
+                                </li>
+                                <li>select * from fn_ITVF_GetEmployees()</li>
+                                <li>
+                                    <code>
+                                        create function fn_MSTVF_GetEmployees() <br>
+                                        returns @Table Table (Name varchar(20),Gender varchar(10), City varchar(20)) <br>
+                                        as  <br>
+                                        begin <br>
+                                            insert into @Table <br>
+                                            Select Name,Gender,City from tblEmp2 <br>
+                                            return <br>
+                                        end
+                                    </code>
+                                </li>
+                                <li>select * from fn_MSTVF_GetEmployees()</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
