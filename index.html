@@ -4612,6 +4612,269 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ69" role="button" aria-expanded="false" aria-controls="SQ69">
+                        Q69. Create a Local Temporary Table PersonlDetails(Id,Name,Gender). Insert some values in it and check in tempdb if it exists.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ69">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create table #PersonDetails(Id int,Name varchar(20),Gender varchar(10))
+                                        <br>
+                                        insert into #PersonDetails values (1,'Kumar','Male')
+                                        <br>
+                                        select * from #PersonDetails 
+                                        <br>
+                                        select name from tempdb..sysobjects where name like '#PersonDetails%'
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ70" role="button" aria-expanded="false" aria-controls="SQ70">
+                        Q70. Create a sp spCreateLocalTempTable which creates a temp table #PersonDetails , inserts some values and select those values. 
+                        Try to check #PersonDetails if exists after the execution of sp.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ70">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create proc spCreateLocalTempTable <br>
+                                        as <br>
+                                        begin <br>
+                                            create table #PersonDetails(Id int,Name varchar(20),Gender varchar(10)) <br>
+                                            insert into #PersonDetails values (1,'Kumar','Male') <br>
+                                            insert into #PersonDetails values (2,'Kumari','Female') <br>
+                                            select * from #PersonDetails <br>
+                                        end <br> <br>
+
+                                        exec spCreateLocalTempTable
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ71" role="button" aria-expanded="false" aria-controls="SQ71">
+                        Q71. Create a view vwEmployeeByDepartment using tblEmployee and tblDepartment table , execute it and try to see the text of this view.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ71">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create view vWEmployeeByDepartment <br>
+                                        as <br>
+                                        select e.Name,e.Gender,e.City,d.Name as Department <br>
+                                        from tblEmployee e join tblDepartment d <br>
+                                        on e.DepId=d.Id <br> <br>
+
+                                        select * from vWEmployeeByDepartment <br> <br>
+                                        sp_helptext vWEmployeeByDepartment
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ72" role="button" aria-expanded="false" aria-controls="SQ72">
+                        Q72. Create a table tableEmployee2 like :-
+                    </a>
+                    <table class="table table-sm table-striped border border-1 text-center  my-2">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sam</td>
+                                <td>null</td>
+                                <td>null</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>null</td>
+                                <td>Todd</td>
+                                <td>Tanzan</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>null</td>
+                                <td>null</td>
+                                <td>Sara</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Ben</td>
+                                <td>Parker</td>
+                                <td>null</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>James</td>
+                                <td>Nick</td>
+                                <td>Nancy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="my-2 list-ul">
+                        <li>Write a query to select Id, Name where the Name column has either FirstName or MiddleName or LastName.</li>
+                    </ul>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ72">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        select Id , coalesce(FirstName,MiddleName,LastName) as Name from tableEmployee2
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ73" role="button" aria-expanded="false" aria-controls="SQ73">
+                        Q73. What are Temporary Tables?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ73">
+                        <div class="card card-body">
+                            <p><strong>Temporary Table</strong></p>  
+                            <ul>
+                                <li>Very similar to Permanent Tables. Permanent tables get created in database we specify and remain their untill we delete them.</li>
+                                <li>Temporary tables get created in TempDB and are automatically deleted when they are no longer in use.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ74" role="button" aria-expanded="false" aria-controls="SQ74">
+                        Q74. What are the different Types of Temporary tables?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ74">
+                        <div class="card card-body">
+                            <p><strong>Temporary Table Types</strong></p>  
+                            <ol>
+                                <li>Local Temporary Tables</li>
+                                <li>Global Temporary Tables</li>
+                            </ol>
+                            <ul>
+                                <li><strong>Local Temporary Tables</strong></li>
+                                <li>Created same as Permanent Table but only # is prefixed before table name.</li>
+                                <li>Created in TempDB. Name of table is suffixed with lot of underscore and numbers , so to to find it we have to use like in our query.</li>
+                                <li><code>select name from tempdb..sysobjects where name like '#PersonDetails%' </code></li>
+                                <li>Is available only for the connection that has created that table.</li>
+                                <li>Is automatically dropped, when the connection that has created it is closed.</li>
+                                <li>We can explicitely drop it using -> drop table #PersonDetails</li>
+                                
+                                <li>If Temporary table is created inside a stored procedure, it automatically dropped upo the completion of execution of sp.</li>
+                                <li>It is possible for different connection to create temporary table with same name.</li>
+                            </ul>
+                            <ul>
+                                <li><strong>Global Temporary Tables</strong></li>
+                                <li>To create prefix the name with 2#(##) symbols.</li>
+                                <li><code>create table ##EmployeeDetails(Id int,Name nvarchar(20)) </code></li>
+                                <li>Visible to all connections and are only destroyed when the last connection referencing the table is closed.</li>
+                                <li>Global temp table has to be unique, if we inspect the object explorer window we can see no random numbers suffixed at the end of that table name.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ75" role="button" aria-expanded="false" aria-controls="SQ75">
+                        Q75. Create a temporary table and select employee details inside a procedure.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ75">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create proc spCreateLocalTempTable <br>
+                                        as <br>
+                                        begin  <br>
+                                            create table #EmployeeDetails(EmpCode int,Name varchar(20),Gender varchar(10),Department varchar(10)) <br>
+                                            insert into #EmployeeDetails values (101,'Amit Tripathi','Male','Sales') <br>
+                                            insert into #EmployeeDetails values (102,'Saurya Agarwal','Male','IT') <br>
+                                            insert into #EmployeeDetails values (103,'Anju Mishra','Female','HR') <br>
+                                            insert into #EmployeeDetails values (104,'Kritika Bansal','Female','QA') <br>
+                                            select * from #EmployeeDetails <br>
+                                        end                                         
+                                    </code>
+                                </li>
+                                <li>exec spCreateLocalTempTable</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ76" role="button" aria-expanded="false" aria-controls="SQ76">
+                        Q76. What are indexes in sql and why do we use it?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ76">
+                        <div class="card card-body">
+                            <p><strong>What and Why Indexes</strong></p>  
+                            <ul>
+                                <li>Indexes are used by queries to find data from tables quickly.</li>
+                                <li>Indexes are created on table or view, is very similar to an index we find in a book.</li>
+                                <li>If there is no index then query engine checks every row in the table from begining to end which is bad for performance.</li>
+                                <li>Consider a query :- <br>
+                                    <code>
+                                    select * from Employees where salary > 5000 and Salary < 7000
+                                    </code> <br>
+                                        If there is no index in salary column , query engine need to search each record for this condition.
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
