@@ -4875,6 +4875,295 @@
                       </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ77" role="button" aria-expanded="false" aria-controls="SQ77">
+                        Q77. Write query to create , check and delete an index.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ77">
+                        <div class="card card-body">
+                            <p><strong>Indexes</strong></p>  
+                            <ul>
+                                <li><strong>Creating an Index </strong> <br>
+                                    <code>create index IX_tblEmployee_Salary on tblEmployee (Salary Asc) </code>
+                                </li>
+                                <li><strong>Check the index</strong> <br>
+                                    <code>sp_Helpindex tblEmployee</code>
+                                </li>
+                                <li>
+                                   <strong>Deleteing an index</strong> <br>
+                                    <code>drop index tblEmployee.IX_tblEmployee_Salary</code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ78" role="button" aria-expanded="false" aria-controls="SQ78">
+                        Q78. What are the types of indexes in Sql Server?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ78">
+                        <div class="card card-body">
+                            <p><strong>Indexes Types</strong></p>  
+                            <ol>
+                                <li>Clustered</li>
+                                <li>NonClustered</li>
+                                <li>Unique</li>
+                                <li>Filtered</li>
+                                <li>XML</li>
+                                <li>Full text</li>
+                                <li>Spatial</li>
+                                <li>Columnstore</li>
+                                <li>Index with included columns </li>
+                                <li>Index with computed columns</li>
+                            </ol>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ79" role="button" aria-expanded="false" aria-controls="SQ79">
+                        Q79. What are Clustered and Non clustered indexes?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ79">
+                        <div class="card card-body">
+                            <p><strong>Clustered and Non clustered indexes</strong></p>  
+                            <ol>
+                                <li>Clustered Index
+                                    <ul>
+                                        <li>A clustered index determines the physical order of data which get stored in a table.
+                                            For this reason a table can have only one clustered index.</li>
+                                        <li>We cant create more than one clustered index in a table but we can create a clustered index in combination with two columns</li>
+                                        <li><code>create clustered index IX_tblEmployee_Gender_Salary on tblEmployee(Gender desc , Salary asc)</code></li>
+                                    </ul>
+                                </li>
+                                <li>Non clustered Index
+                                    <ul>
+                                        <li>The non clustered index is stored seperately from the actual data.
+                                        <li>A table can have more than one non clustered index just like how a book can have index by chapters at the begining and other by common terms at the end.</li>
+                                        <li>In the index itself , the data get stored in ascending or descending order of the index key, which doesnot anyway influence the storage of data in the table.</li>
+                                        <li> <code>create non clustered index IX_tblEmployee_Name on tblEmployee(Name)</code></li>
+                                    </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ80" role="button" aria-expanded="false" aria-controls="SQ80">
+                        Q80. Difference b/n Clustered and NonClustered Index
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ80">
+                        <div class="card card-body">
+                            <p><strong>Clustered and Non clustered indexes</strong></p>  
+                            <ul>
+                                <li>Only one clustered index per table , whereas more than one in case of non clustered.</li>
+                                <li>Clustered is faster because non clustered has to refer back to the table if selected column is not present in the index.</li>
+                                <li>Clustered index determines the storage order of rows in the table, hencedoesnot require additional spaces. <br>
+                                        In case of non clustered , it is stored seperately from the table, and additional storage space is required.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ81" role="button" aria-expanded="false" aria-controls="SQ81">
+                        Q81. What is Unique Index?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ81">
+                        <div class="card card-body">
+                            <p><strong>Unique Index</strong></p>  
+                            <ul>
+                                <li>Used to enforce uniqueness of key values in the index.</li>
+                                <li>By default Primary Key constraint , creates a unique clustered index.</li>
+                                <li>uniqueness is the property of an index and both clustered and non clustered indexes can be unique.</li>
+                                <li><code>create unique NonClustered Index UIX_tblEmployee_FirstName_LastName on tblEmployee(FirstName,LastName)</code></li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ82" role="button" aria-expanded="false" aria-controls="SQ82">
+                        Q82. Difference between Unique constraint and Unique index?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ82">
+                        <div class="card card-body">
+                            <p><strong>Difference between Unique constraint and Unique index</strong></p>  
+                            <ul>
+                                <li>there is no difference between these.</li>
+                                <li>Infact when we add a unique constraint a unique index gets created behind the scenes.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ83" role="button" aria-expanded="false" aria-controls="SQ83">
+                        Q83. What are the Advantages of Indexes?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ83">
+                        <div class="card card-body">
+                            <p><strong>Advantages of Indexes?</strong></p>  
+                            <ul>
+                                <li>Select statements became faster.</li>
+                                <li>Delete and Update become faster.</li>
+                                <li>Order by ascending and descending becomes faster</li>
+                                <li>Group by can be faster.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ84" role="button" aria-expanded="false" aria-controls="SQ84">
+                        Q84. What are the Disadvantages of Indexes?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ84">
+                        <div class="card card-body">
+                            <p><strong>Disadvantages of Indexes?</strong></p>  
+                            <ul>
+                                <li>Adittional Disk spaces - spaces to store indexes along with table records. </li>
+                                <li>Insert , Update, Delete can become slow- updation in one records needs to be updated in all related indexes.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ85" role="button" aria-expanded="false" aria-controls="SQ85">
+                        Q85. What is a View in Sql?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ85">
+                        <div class="card card-body">
+                            <p><strong>View</strong></p>  
+                            <ul>
+                                <li>View is nothing more than a saved sql query.</li>
+                                <li>View can also be considered as virtual table.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ86" role="button" aria-expanded="false" aria-controls="SQ86">
+                        Q86. What are the Advantages of using Views?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ86">
+                        <div class="card card-body">
+                            <p><strong>Advantages of using Views</strong></p>  
+                            <ul>
+                                <li>Views can be used to reduce the complexity of database schema.</li>
+                                <li>Views can be used as a mechanism to implement rows and column level security.</li>
+                                <li>Views can be used to present aggregated data and hide detailes data.</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ87" role="button" aria-expanded="false" aria-controls="SQ87">
+                        Q87. Write a query to create a View.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ87">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        create view vwEmplDetails <br>
+                                        as <br>
+                                        select e.Id,e.Name,Gender,d.Name as Depatment from tblEmpl1 e join tblDept1 d <br>
+                                        on e.DepartmentId=d.Id  
+                                    </code>
+                                </li>
+                                <li>select * from vwEmplDetails</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ88" role="button" aria-expanded="false" aria-controls="SQ88">
+                        Q88. How to modify a View?
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ88">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        alter view vwEmplDetails <br>
+                                        as <br>
+                                        select e.Name,Gender,d.Name as Depatment from tblEmpl1 e join tblDept1 d <br>
+                                        on e.DepartmentId=d.Id 
+                                    </code>
+                                </li>
+                                <li>select * from vwEmplDetails</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-dark fs-5" data-bs-toggle="collapse" href="#SQ89" role="button" aria-expanded="false" aria-controls="SQ89">
+                        Q89. Write a query to delete a view.
+                    </a>
+                </div>
+                <div class="row py-1">
+                    <div class="col">
+                      <div class="collapse show multi-collapse1" id="SQ89">
+                        <div class="card card-body">
+                            <p><strong>Query</strong></p>  
+                            <ul>
+                                <li>
+                                    <code>
+                                        drop view vwEmplDetails
+                                    </code>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> -->
